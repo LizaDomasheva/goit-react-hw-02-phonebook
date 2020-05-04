@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './contactForm.module.css';
 import PropTypes from 'prop-types';
 
-
 export class ContactForm extends Component {
   state = {
     name: '',
@@ -39,7 +38,8 @@ export class ContactForm extends Component {
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <label className={styles.label}>
           Name
-          <input className={styles.input}
+          <input
+            className={styles.input}
             type="text"
             name="name"
             value={name}
@@ -51,7 +51,8 @@ export class ContactForm extends Component {
         </label>
         <label className={styles.label}>
           Number
-          <input className={styles.input}
+          <input
+            className={styles.input}
             type="tel"
             name="number"
             value={number}
@@ -61,7 +62,9 @@ export class ContactForm extends Component {
             onChange={this.handleChange}
           />
         </label>
-        <button className={styles.button} type="submit">Add contact</button>
+        <button className={styles.button} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
@@ -69,5 +72,5 @@ export class ContactForm extends Component {
 
 ContactForm.propTypes = {
   contacts: PropTypes.arrayOf(PropTypes.object),
-  getContactInfo: PropTypes.func
-}
+  getContactInfo: PropTypes.func,
+};
